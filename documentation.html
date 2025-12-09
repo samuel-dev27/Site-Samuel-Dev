@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel.DEV | Documentación / Documentação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF6B00',
+                            dark: '#020202',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        body: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0c0c0c; color: #fff; font-family: 'Space Grotesk', sans-serif; }
+        .doc-card { background: #151515; border: 1px solid #333; border-radius: 12px; padding: 24px; transition: all 0.3s; }
+        .doc-card:hover { border-color: #FF6B00; transform: translateY(-4px); }
+        .code-block { background: #000; padding: 12px; border-radius: 8px; font-family: monospace; color: #a5b3ce; font-size: 0.9em; border: 1px solid #333; overflow-x: auto; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        .lang-badge { font-size: 0.7em; padding: 2px 6px; border-radius: 4px; border: 1px solid; margin-right: 8px; font-weight: bold; }
+        .es { border-color: #fbbf24; color: #fbbf24; } /* Spanish - Yellow/Gold */
+        .pt { border-color: #4ade80; color: #4ade80; } /* Portuguese - Green */
+    </style>
+</head>
+<body class="p-8 md:p-16">
+
+    <header class="max-w-6xl mx-auto mb-16 border-b border-gray-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-2">Samuel.<span class="text-brand-orange">Dev</span></h1>
+            <p class="text-gray-400 text-xl">Manual Técnico & Guía de Despliegue <br> <span class="text-sm opacity-70">Manual Técnico & Guia de Deploy</span></p>
+        </div>
+        <a href="index.html" class="px-6 py-2 bg-brand-orange text-black font-bold uppercase rounded hover:bg-white transition">
+            Ver Sitio / Ver Site
+        </a>
+    </header>
+
+    <nav class="max-w-6xl mx-auto mb-12 flex gap-4 overflow-x-auto pb-4">
+        <a href="#structure" class="text-sm font-bold uppercase hover:text-brand-orange">Estructura</a>
+        <a href="#i18n" class="text-sm font-bold uppercase hover:text-brand-orange">Traducción/Tradução</a>
+        <a href="#blog" class="text-sm font-bold uppercase hover:text-brand-orange">Blog</a>
+        <a href="#deploy" class="text-sm font-bold uppercase text-brand-orange">Deploy (Publicar)</a>
+        <a href="#seo" class="text-sm font-bold uppercase hover:text-brand-orange">SEO</a>
+        <a href="#monetization" class="text-sm font-bold uppercase hover:text-brand-orange">Monetización</a>
+    </nav>
+
+    <main class="max-w-6xl mx-auto space-y-20">
+
+        <!-- 1. FOLDER STRUCTURE -->
+        <section id="structure">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-folder-tree"></i> Estructura / Estrutura
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="doc-card">
+                    <h3 class="text-xl mb-4">📂 /pages</h3>
+                    <div class="space-y-4 text-gray-300 text-sm">
+                        <p><span class="lang-badge es">ES</span> Contiene las vistas principales (Inicio, Sobre Mí, Servicios, Blog).</p>
+                        <p><span class="lang-badge pt">PT</span> Contém as visualizações principais (Início, Sobre Mim, Serviços, Blog).</p>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <h3 class="text-xl mb-4">📂 /data</h3>
+                    <div class="space-y-4 text-gray-300 text-sm">
+                        <p><span class="lang-badge es">ES</span> Archivos cruciales: <code>i18n.ts</code> (textos) y <code>posts.ts</code> (artículos).</p>
+                        <p><span class="lang-badge pt">PT</span> Arquivos cruciais: <code>i18n.ts</code> (textos) e <code>posts.ts</code> (artigos).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. LOCALIZATION GUIDE -->
+        <section id="i18n">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-language"></i> Traducción / Tradução
+            </h2>
+            <div class="bg-[#1a1a1a] p-8 rounded-xl border border-gray-800">
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="text-white font-bold mb-2"><span class="lang-badge es">ES</span> Cómo editar textos</h4>
+                        <p class="text-gray-400 text-sm">Todo el texto del sitio está en <code>data/i18n.ts</code>. Busca la sección (ej. 'hero') y edita las cadenas dentro de <code>es</code>, <code>pt</code>, o <code>en</code>.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2"><span class="lang-badge pt">PT</span> Como editar textos</h4>
+                        <p class="text-gray-400 text-sm">Todo o texto do site está em <code>data/i18n.ts</code>. Encontre a seção (ex: 'hero') e edite as strings dentro de <code>es</code>, <code>pt</code>, ou <code>en</code>.</p>
+                    </div>
+                </div>
+                <div class="code-block">
+// data/i18n.ts
+export const i18nData = {
+  es: { nav: { home: 'Inicio' } },   // Español
+  pt: { nav: { home: 'Início' } },   // Português
+  en: { nav: { home: 'Home' } }      // English
+};
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BLOG MANAGEMENT -->
+        <section id="blog">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-pen-nib"></i> Gestión del Blog / Gestão do Blog
+            </h2>
+            <div class="bg-[#1a1a1a] p-8 rounded-xl border border-gray-800">
+                <p class="mb-6 text-lg text-white">
+                    <span class="lang-badge es">ES</span> Para agregar un post, edita <code>data/posts.ts</code>. Debes incluir contenido para los 3 idiomas.<br>
+                    <span class="lang-badge pt">PT</span> Para adicionar um post, edite <code>data/posts.ts</code>. Você deve incluir conteúdo para os 3 idiomas.
+                </p>
+                
+                <h4 class="text-white font-bold mb-2">Código Ejemplo / Código Exemplo:</h4>
+                <div class="code-block text-xs">
+{
+  slug: 'mi-nuevo-post', // URL unica
+  date: '2025-12-25',
+  img: 'https://...',
+  tags: ['WebDev', 'Business'], // Tags deben existir en i18n.ts / Tags devem existir em i18n.ts
+  locales: {
+    es: { title: 'Título Español', category: 'Negocios', content: '<p>Hola...</p>' },
+    pt: { title: 'Título Português', category: 'Negócios', content: '<p>Olá...</p>' },
+    en: { title: 'English Title', category: 'Business', content: '<p>Hello...</p>' }
+  }
+}
+                </div>
+                
+                <div class="mt-8 p-4 border border-brand-orange/30 bg-brand-orange/5 rounded">
+                     <h4 class="text-brand-orange font-bold mb-2">⚠️ Importante: Tags</h4>
+                     <p class="text-sm text-gray-300 mb-2">
+                        <span class="lang-badge es">ES</span> Si creas una etiqueta nueva (ej: 'AI'), debes agregar su traducción en <code>data/i18n.ts</code> bajo la sección <code>tags</code>.
+                     </p>
+                     <p class="text-sm text-gray-300">
+                        <span class="lang-badge pt">PT</span> Se você criar uma nova tag (ex: 'AI'), deve adicionar sua tradução em <code>data/i18n.ts</code> na seção <code>tags</code>.
+                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. DEPLOYMENT GUIDE -->
+        <section id="deploy">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-cloud-arrow-up"></i> Publicación / Publicação (Deploy)
+            </h2>
+
+            <!-- HOSTINGER -->
+            <div class="mb-12">
+                <h3 class="text-2xl text-white mb-4 border-l-4 border-brand-orange pl-4">Opción A: Hostinger (Recomendado)</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-gray-400 text-sm space-y-3">
+                        <p><strong class="text-white">Paso 1: Generar Archivos (Build)</strong><br>
+                        Como este proyecto usa React (Vite/CRA), necesitas ejecutar en tu terminal:
+                        <code class="bg-black px-1">npm run build</code>. Esto creará una carpeta llamada <code>dist</code> o <code>build</code>.</p>
+                        
+                        <p><strong class="text-white">Paso 2: Subir a Hostinger</strong><br>
+                        1. Entra al Administrador de Archivos (File Manager) en Hostinger.<br>
+                        2. Navega a la carpeta <code>public_html</code>.<br>
+                        3. Sube <strong>TODO</strong> el contenido de tu carpeta <code>dist</code> (no la carpeta en sí, sino los archivos dentro: index.html, assets, etc.).</p>
+                    </div>
+                    <div class="text-gray-400 text-sm space-y-3">
+                        <p><strong class="text-white">Passo 1: Gerar Arquivos (Build)</strong><br>
+                        Como este projeto usa React, você precisa rodar no terminal:
+                        <code class="bg-black px-1">npm run build</code>. Isso criará uma pasta chamada <code>dist</code> ou <code>build</code>.</p>
+                        
+                        <p><strong class="text-white">Passo 2: Upload na Hostinger</strong><br>
+                        1. Entre no Gerenciador de Arquivos (File Manager) da Hostinger.<br>
+                        2. Vá para a pasta <code>public_html</code>.<br>
+                        3. Faça upload de <strong>TODO</strong> o conteúdo da sua pasta <code>dist</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GITHUB PAGES -->
+            <div>
+                <h3 class="text-2xl text-white mb-4 border-l-4 border-white pl-4">Opción B: GitHub Pages (Gratis)</h3>
+                <div class="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+                    <ol class="list-decimal list-inside space-y-4 text-gray-400 text-sm">
+                        <li>
+                            <strong class="text-white">Repositorio / Repositório:</strong> Sube tu código a GitHub. / Suba seu código para o GitHub.
+                        </li>
+                        <li>
+                            <strong class="text-white">Configuración / Configuração:</strong> Ve a Settings > Pages. / Vá em Settings > Pages.
+                        </li>
+                        <li>
+                            <strong class="text-white">Source:</strong> Selecciona "GitHub Actions" o configura el branch main/master. / Selecione "GitHub Actions" ou configure o branch.
+                        </li>
+                        <li>
+                            <strong class="text-white">Nota Importante:</strong> Para React en GitHub Pages, a veces necesitas cambiar el <code>base</code> en <code>vite.config.js</code> o <code>package.json</code> para coincidir con el nombre de tu repositorio.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SEO STRATEGY -->
+        <section id="seo">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-magnifying-glass-chart"></i> Estrategia SEO / Estratégia SEO
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="doc-card">
+                    <h3 class="text-white text-lg mb-4">ES: Optimización</h3>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-400">
+                        <li><strong>Meta Tags Dinámicos:</strong> El sitio ya actualiza el <code>document.title</code> automáticamente en cada página.</li>
+                        <li><strong>Blog de Nicho:</strong> Escribe artículos sobre problemas locales (ej: "Soporte Técnico en Curitiba").</li>
+                        <li><strong>Google My Business:</strong> Asegúrate de que tu sitio web esté enlazado en tu ficha de Google Maps.</li>
+                        <li><strong>Backlinks:</strong> Comparte tus artículos en LinkedIn y Facebook Groups de tecnología.</li>
+                    </ul>
+                </div>
+                <div class="doc-card">
+                    <h3 class="text-white text-lg mb-4">PT: Otimização</h3>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-400">
+                        <li><strong>Meta Tags Dinâmicas:</strong> O site já atualiza o <code>document.title</code> automaticamente.</li>
+                        <li><strong>Blog de Nicho:</strong> Escreva artigos sobre problemas locais (ex: "Suporte Técnico em Curitiba").</li>
+                        <li><strong>Google My Business:</strong> Certifique-se de que seu site esteja linkado na sua ficha do Google Maps.</li>
+                        <li><strong>Backlinks:</strong> Compartilhe seus artigos no LinkedIn e Grupos de Facebook.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. MONETIZATION -->
+        <section id="monetization">
+            <h2 class="text-3xl font-bold text-brand-orange mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-sack-dollar"></i> Monetización / Monetização
+            </h2>
+            <div class="bg-[#1a1a1a] p-8 rounded-xl border border-gray-800">
+                <p class="mb-6 text-sm text-gray-400">
+                    <span class="lang-badge es">ES</span> Para monetizar el blog con anuncios (Google AdSense), sigue estos pasos.<br>
+                    <span class="lang-badge pt">PT</span> Para monetizar o blog com anúncios (Google AdSense), siga estes passos.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-4 border border-white/10 rounded">
+                        <h4 class="text-white font-bold mb-2">1. Registro</h4>
+                        <p class="text-xs text-gray-400">Crea una cuenta en <a href="https://adsense.google.com" class="text-brand-orange underline">Google AdSense</a> y agrega tu dominio (ej: samuel.dev).</p>
+                    </div>
+                    <div class="p-4 border border-white/10 rounded">
+                        <h4 class="text-white font-bold mb-2">2. Script Header</h4>
+                        <p class="text-xs text-gray-400">Google te dará un código JS. Pégalo en el archivo <code>index.html</code> dentro de la etiqueta <code>&lt;head&gt;</code>.</p>
+                    </div>
+                    <div class="p-4 border border-white/10 rounded">
+                        <h4 class="text-white font-bold mb-2">3. Ads en Blog</h4>
+                        <p class="text-xs text-gray-400">Puedes insertar bloques de anuncios manualmente dentro del HTML de tus posts en <code>data/posts.ts</code>.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 code-block text-xs">
+<!-- Ejemplo de bloque de anuncio dentro de un post -->
+<div class="ad-container" style="text-align:center; margin: 20px 0;">
+    <script async src="https://pagead2.googlesyndication.com/..."></script>
+    <!-- Anuncio Display -->
+    <ins class="adsbygoogle" ...></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p>Documentación generada para Samuel.DEV Portfolio Project.</p>
+        <p>Documentação gerada para Samuel.DEV Portfolio Project.</p>
+    </footer>
+
+</body>
+</html>
