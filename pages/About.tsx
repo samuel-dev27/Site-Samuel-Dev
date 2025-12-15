@@ -28,9 +28,18 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
   const t_tags = i18nData[currentLang].tags;
 
   // Timeline Data
+  // [ES] Aquí puedes agregar o modificar tu experiencia.
   const timeline = [
+    // [NUEVO] Ejemplo de cómo agregar una nueva experiencia:
     { 
-        year: currentLang === 'es' ? ' Feb/Dic 2025' : (currentLang === 'pt' ? 'Fev/Dec 2025' : 'Feb/Dec 2025'), 
+        year: '2024 - Presente', 
+        role: currentLang === 'es' ? 'Desarrollador Full Stack' : (currentLang === 'pt' ? 'Desenvolvedor Full Stack' : 'Full Stack Developer'), 
+        company: 'Freelance', 
+        desc: currentLang === 'en' ? 'Developing custom web solutions with React, PHP, and Node.js.' : (currentLang === 'pt' ? 'Desenvolvendo soluções web personalizadas com React, PHP e Node.js.' : 'Desarrollando soluciones web a medida con React, PHP y Node.js.'),
+        icon: 'fa-solid fa-code'
+    },
+    { 
+        year: '2025', 
         role: currentLang === 'es' ? 'Asistente Web Design' : (currentLang === 'pt' ? 'Assistente Web Design' : 'Web Design Assistant'), 
         company: 'Apache Creative', 
         desc: currentLang === 'en' ? 'Frontend development and UI assistance.' : (currentLang === 'pt' ? 'Assistência em desenvolvimento frontend e UI.' : 'Asistencia en desarrollo frontend y UI.'),
@@ -52,13 +61,16 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
     },
     { 
         year: '2017 - 2020', 
-        role: currentLang === 'es' ? 'Ing. Sistemas' : (currentLang === 'pt' ? 'Eng. Sistemas' : 'Systems Eng.)'), 
+        // [MODIFICADO] Se eliminó "(Incompleto)" del título para mejor presentación.
+        role: currentLang === 'es' ? 'Ingeniería de Sistemas' : (currentLang === 'pt' ? 'Engenharia de Sistemas' : 'Systems Engineering'), 
         company: 'I.U.P. Santiago Mariño', 
-        desc: currentLang === 'en' ? '3 years completed. Focused on Systems Engineering.' : (currentLang === 'pt' ? '3 anos cursados. Foco em Engenharia de Sistemas.' : '3 años cursados. Enfoque en Ingeniería de Sistemas.'),
+        // El detalle de los años cursados se mantiene en la descripción.
+        desc: currentLang === 'en' ? '3 years completed. Foundation in logic, algorithms and calculus.' : (currentLang === 'pt' ? '3 anos cursados. Base em lógica, algoritmos e cálculo.' : '3 años cursados. Base en lógica, algoritmos y cálculo.'),
         icon: 'fa-solid fa-university'
     }
   ];
 
+  // Updated Stack with Node, PHP, MySQL
   const stack = [
       { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-[#E34F26]' },
       { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: 'text-[#1572B6]' },
@@ -163,11 +175,12 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
                         </a>
                         <a href="https://github.com/momo-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
                             <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition"><i className="fa-brands fa-github"></i></span>
-                            github.com/samuel-dev27
+                            github.com/momo-dev27
                         </a>
-                      <a href="https://linkedin.com/in/samuel-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
+                        {/* LINKEDIN ADDED HERE */}
+                        <a href="https://linkedin.com/in/samuel-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
                             <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition"><i className="fa-brands fa-linkedin"></i></span>
-                            /samuel-dev27
+                            linkedin.com/in/samuel-dev27
                         </a>
                     </div>
                 </RevealOnScroll>
@@ -205,13 +218,15 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
 
         </div>
 
-        {/* 3. TECH STACK */}
+        {/* 3. TECH STACK & TOOLS (Updated) */}
         <RevealOnScroll className="mb-24">
             <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-display uppercase text-slate-500">Tech Stack</h2>
+                {/* Visual change to force update perception */}
+                <h2 className="text-2xl font-display uppercase text-slate-500">Tech Stack & Tools</h2>
                 <div className="h-px flex-1 bg-white/10"></div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            {/* Grid adjusted to grid-cols-6 for better flow with 11 items */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {stack.map((tech, idx) => (
                 <div key={tech.name} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col items-center gap-2 hover:bg-white/5 transition group">
                 <i className={`${tech.icon} ${tech.color} text-2xl group-hover:scale-110 transition animate-float`} style={{ animationDelay: `${idx * 0.2}s` }}></i>
@@ -261,3 +276,4 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
 };
 
 export default About;
+
