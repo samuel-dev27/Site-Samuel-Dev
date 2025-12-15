@@ -63,6 +63,9 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
       { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-[#E34F26]' },
       { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: 'text-[#1572B6]' },
       { name: 'JavaScript', icon: 'fa-brands fa-js', color: 'text-[#F7DF1E]' },
+      { name: 'Node.js', icon: 'fa-brands fa-node-js', color: 'text-[#339933]' }, // Node
+      { name: 'PHP', icon: 'fa-brands fa-php', color: 'text-[#777BB4]' },         // PHP
+      { name: 'MySQL', icon: 'fa-solid fa-database', color: 'text-[#4479A1]' },   // MySQL
       { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-[#38B2AC]' },
       { name: 'WordPress', icon: 'fa-brands fa-wordpress', color: 'text-[#21759B]' },
       { name: 'Windows', icon: 'fa-brands fa-windows', color: 'text-[#0078D6]' },
