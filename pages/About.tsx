@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
   // Timeline Data
   const timeline = [
     { 
-        year: '2025', 
+        year: currentLang === 'es' ? ' Feb/Dic 2025' : (currentLang === 'pt' ? 'Fev/Dec 2025' : 'Feb/Dec 2025'), 
         role: currentLang === 'es' ? 'Asistente Web Design' : (currentLang === 'pt' ? 'Assistente Web Design' : 'Web Design Assistant'), 
         company: 'Apache Creative', 
         desc: currentLang === 'en' ? 'Frontend development and UI assistance.' : (currentLang === 'pt' ? 'Assistência em desenvolvimento frontend e UI.' : 'Asistencia en desarrollo frontend y UI.'),
@@ -52,7 +52,7 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
     },
     { 
         year: '2017 - 2020', 
-        role: currentLang === 'es' ? 'Ing. Sistemas (Incompleto)' : (currentLang === 'pt' ? 'Eng. Sistemas (Incompleto)' : 'Systems Eng. (Incomplete)'), 
+        role: currentLang === 'es' ? 'Ing. Sistemas' : (currentLang === 'pt' ? 'Eng. Sistemas' : 'Systems Eng.)'), 
         company: 'I.U.P. Santiago Mariño', 
         desc: currentLang === 'en' ? '3 years completed. Focused on Systems Engineering.' : (currentLang === 'pt' ? '3 anos cursados. Foco em Engenharia de Sistemas.' : '3 años cursados. Enfoque en Ingeniería de Sistemas.'),
         icon: 'fa-solid fa-university'
@@ -160,7 +160,11 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
                         </a>
                         <a href="https://github.com/momo-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
                             <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition"><i className="fa-brands fa-github"></i></span>
-                            github.com/momo-dev27
+                            github.com/samuel-dev27
+                        </a>
+                      <a href="https://linkedin.com/in/samuel-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
+                            <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition"><i className="fa-brands fa-linkedin"></i></span>
+                            /samuel-dev27
                         </a>
                     </div>
                 </RevealOnScroll>
