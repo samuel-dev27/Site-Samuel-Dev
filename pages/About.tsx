@@ -31,15 +31,9 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
   // [ES] Aquí puedes agregar o modificar tu experiencia.
   const timeline = [
     // [NUEVO] Ejemplo de cómo agregar una nueva experiencia:
+   
     { 
-        year: '2024 - Presente', 
-        role: currentLang === 'es' ? 'Desarrollador Full Stack' : (currentLang === 'pt' ? 'Desenvolvedor Full Stack' : 'Full Stack Developer'), 
-        company: 'Freelance', 
-        desc: currentLang === 'en' ? 'Developing custom web solutions with React, PHP, and Node.js.' : (currentLang === 'pt' ? 'Desenvolvendo soluções web personalizadas com React, PHP e Node.js.' : 'Desarrollando soluciones web a medida con React, PHP y Node.js.'),
-        icon: 'fa-solid fa-code'
-    },
-    { 
-        year: '2025', 
+        year: currentLang === 'es' ? ' Feb/Dic 2025' : (currentLang === 'pt' ? 'Fev/Dec 2025' : 'Feb/Dec 2025'),
         role: currentLang === 'es' ? 'Asistente Web Design' : (currentLang === 'pt' ? 'Assistente Web Design' : 'Web Design Assistant'), 
         company: 'Apache Creative', 
         desc: currentLang === 'en' ? 'Frontend development and UI assistance.' : (currentLang === 'pt' ? 'Assistência em desenvolvimento frontend e UI.' : 'Asistencia en desarrollo frontend y UI.'),
@@ -180,7 +174,7 @@ const About: React.FC<AboutProps> = ({ currentLang }) => {
                         {/* LINKEDIN ADDED HERE */}
                         <a href="https://linkedin.com/in/samuel-dev27" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition group">
                             <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition"><i className="fa-brands fa-linkedin"></i></span>
-                            linkedin.com/in/samuel-dev27
+                            /samuel-dev27
                         </a>
                     </div>
                 </RevealOnScroll>
